@@ -22,13 +22,11 @@ app.use("/", express.static(path.join(__dirname, "public")));
 
 app.use(
   session({
-    name: "iNews", // Tên session (tự chọn)
-    secret: "Mèo méo meo mèo meo", // Khóa bảo vệ (tự chọn)
+    store: new RedisStore({ client: redisClient }),
+    secret: "con mèo kêu sao?",
     resave: false,
     saveUninitialized: false,
-    cookie: {
-      maxAge: 30 * 24 * 60 * 60 * 1000, // Hết hạn sau 30 ngày
-    },
+    cookie: { secure: false }, // Đặt true nếu dùng HTTPS
   })
 );
 

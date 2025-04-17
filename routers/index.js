@@ -76,7 +76,7 @@ router.get("/baiviet/chitiet/:id", async (req, res) => {
     chuyenmuc: cm,
     baiviet: bv,
     xemnhieunhat: xnn,
-    firstIamge: firstImage,
+    firstImage: firstImage,
   });
 });
 // GET: Tin mới nhất
